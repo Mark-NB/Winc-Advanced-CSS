@@ -1,0 +1,23 @@
+$my-gray: #c3cfe2;
+$my-purple: #686de0;
+$my-white: #fff;
+
+@mixin my-grid {
+    display: grid;
+    justify-items: center;
+}
+
+@mixin my-flexbox($dir: row)  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $dir;
+}
+
+@mixin my-margin() {
+    margin: 10px 10px;
+}
+
+@mixin my-padding() {
+    padding: 50px 25px;
+}
