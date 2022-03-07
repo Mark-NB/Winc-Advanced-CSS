@@ -1,0 +1,60 @@
+section {
+    background-color: $my-gray;
+}
+
+.portfolio {
+    @include my-grid;
+    @include my-padding;
+    margin: auto;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 2rem;
+    width: 80%;
+
+    &__container {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 5px;
+        position: relative;
+        background-color: black;
+    }
+
+    &__btn {
+        text-align: center;
+        font-weight: 600;
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+    
+    &__img {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 5px;
+        position: relative;
+        z-index: 2; 
+
+        &--invisible {
+            transition: 300ms ease-in;
+
+            &:hover {
+            opacity: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio {
+        grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .portfolio {
+        grid-template: repeat(7, 1fr) / repeat(1, 1fr);
+    }
+}

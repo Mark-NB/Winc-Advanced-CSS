@@ -10,9 +10,9 @@ header {
 }
 
 .card {
-  width: 100%;
+  width: 80%;
   max-width: 500px;
-  min-width: 399px;
+  min-width: 305px;
   height: 750px;
   margin: auto;
   padding: 2rem;
@@ -33,9 +33,11 @@ header {
   background-color: #fff;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   padding: 50px 25px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card__img {
@@ -71,6 +73,8 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card__name {
@@ -89,5 +93,83 @@ header {
   font-weight: 600;
   text-align: center;
   margin: 10px 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 1rem 0;
+  }
+}
+
+section {
+  background-color: #c3cfe2;
+}
+
+.portfolio {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  padding: 50px 25px;
+  margin: auto;
+  -ms-grid-rows: (1fr)[3];
+  -ms-grid-columns: (1fr)[3];
+      grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+  gap: 2rem;
+  width: 80%;
+}
+
+.portfolio__container {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  position: relative;
+  background-color: black;
+}
+
+.portfolio__btn {
+  text-align: center;
+  font-weight: 600;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 0;
+}
+
+.portfolio__img {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio__img--invisible {
+  -webkit-transition: 300ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.portfolio__img--invisible:hover {
+  opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio {
+    -ms-grid-rows: (1fr)[4];
+    -ms-grid-columns: (1fr)[2];
+        grid-template: repeat(4, 1fr)/repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio {
+    -ms-grid-rows: (1fr)[7];
+    -ms-grid-columns: (1fr)[1];
+        grid-template: repeat(7, 1fr)/repeat(1, 1fr);
+  }
 }
 /*# sourceMappingURL=style.css.map */
