@@ -15,6 +15,10 @@ section {
         border-radius: 5px;
         position: relative;
         background-color: black;
+        &--img-gone:hover > .portfolio__img {
+            opacity: 0;
+            z-index: 0;
+        }
     }
 
     &__btn {
@@ -27,7 +31,12 @@ section {
         right: 0;
         margin: auto;
         transform: translateY(-50%);
-        z-index: 0;
+        z-index: 1;
+        transition: 150ms ease-in;
+        &--hover:hover {
+            color: coral;
+            font-size: 1.5rem;
+        }
     }
     
     &__img {
@@ -36,15 +45,9 @@ section {
         border-radius: 5px;
         position: relative;
         z-index: 2; 
-
-        &--invisible {
-            transition: 300ms ease-in;
-
-            &:hover {
-            opacity: 0;
-            }
-        }
+        transition: 300ms ease-in;
     }
+    
 }
 
 @media screen and (max-width: 768px) {

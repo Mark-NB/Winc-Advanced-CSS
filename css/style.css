@@ -5,6 +5,16 @@ body {
   font-size: 16px;
 }
 
+@font-face {
+  font-family: 'my-brands';
+  src: url("../recourses/font/fa-brands-400.woff2") format("woff"), url("../recourses/font/fa-brands-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'my-icons';
+  src: url("../recourses/font/fa-regular-400.woff2") format("woff"), url("../recourses/font/fa-regular-400.ttf") format("truetype");
+}
+
 header {
   background-color: #c3cfe2;
 }
@@ -126,6 +136,11 @@ section {
   background-color: black;
 }
 
+.portfolio__container--img-gone:hover > .portfolio__img {
+  opacity: 0;
+  z-index: 0;
+}
+
 .portfolio__btn {
   text-align: center;
   font-weight: 600;
@@ -137,7 +152,14 @@ section {
   margin: auto;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  z-index: 0;
+  z-index: 1;
+  -webkit-transition: 150ms ease-in;
+  transition: 150ms ease-in;
+}
+
+.portfolio__btn--hover:hover {
+  color: coral;
+  font-size: 1.5rem;
 }
 
 .portfolio__img {
@@ -146,15 +168,8 @@ section {
   border-radius: 5px;
   position: relative;
   z-index: 2;
-}
-
-.portfolio__img--invisible {
   -webkit-transition: 300ms ease-in;
   transition: 300ms ease-in;
-}
-
-.portfolio__img--invisible:hover {
-  opacity: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -171,5 +186,271 @@ section {
     -ms-grid-columns: (1fr)[1];
         grid-template: repeat(7, 1fr)/repeat(1, 1fr);
   }
+}
+
+aside {
+  position: fixed;
+  right: 0;
+  bottom: 75px;
+  z-index: 3;
+}
+
+.socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 200px;
+  height: 250px;
+  position: relative;
+  left: 150px;
+}
+
+.socials__blog-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  width: 200px;
+  background-color: #e17b77;
+}
+
+.socials__blog-container::before {
+  font-family: 'my-icons';
+  font-size: 1.75rem;
+  color: whitesmoke;
+  content: "\f022";
+  margin: 10px 10px;
+}
+
+.socials__blog-container--unfold {
+  -webkit-transition: 300ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.socials__blog-container--unfold:hover {
+  -webkit-transform: translate(-150px);
+          transform: translate(-150px);
+}
+
+.socials__blog-link {
+  margin-right: 25px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.socials__twitter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  width: 200px;
+  background-color: #00aced;
+}
+
+.socials__twitter-container::before {
+  font-family: 'my-brands';
+  font-size: 1.75rem;
+  color: whitesmoke;
+  content: "\f099";
+  margin: 10px 10px;
+  margin-left: 11px;
+}
+
+.socials__twitter-container--unfold {
+  -webkit-transition: 300ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.socials__twitter-container--unfold:hover {
+  -webkit-transform: translate(-150px);
+          transform: translate(-150px);
+}
+
+.socials__twitter-link {
+  margin-right: 25px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.socials__linkedin-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  width: 200px;
+  background-color: #007bb6;
+}
+
+.socials__linkedin-container::before {
+  font-family: 'my-brands';
+  font-size: 1.75rem;
+  color: whitesmoke;
+  content: "\f0e1";
+  margin: 10px 10px;
+  margin-left: 12px;
+  margin-top: 14px;
+}
+
+.socials__linkedin-container--unfold {
+  -webkit-transition: 300ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.socials__linkedin-container--unfold:hover {
+  -webkit-transform: translate(-150px);
+          transform: translate(-150px);
+}
+
+.socials__linkedin-link {
+  margin-right: 25px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.socials__facebook-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  width: 200px;
+  background-color: #3b5998;
+}
+
+.socials__facebook-container::before {
+  font-family: 'my-brands';
+  font-size: 1.75rem;
+  color: whitesmoke;
+  content: "\f39e";
+  margin: 10px 10px;
+  margin-left: 15px;
+}
+
+.socials__facebook-container--unfold {
+  -webkit-transition: 300ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.socials__facebook-container--unfold:hover {
+  -webkit-transform: translate(-150px);
+          transform: translate(-150px);
+}
+
+.socials__facebook-link {
+  margin-right: 25px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.socials__github-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  width: 200px;
+  background-color: #333;
+}
+
+.socials__github-container::before {
+  font-family: 'my-brands';
+  color: whitesmoke;
+  font-size: 1.75rem;
+  content: "\f09b";
+  margin: 10px 10px;
+}
+
+.socials__github-container--unfold {
+  -webkit-transition: 300ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.socials__github-container--unfold:hover {
+  -webkit-transform: translate(-150px);
+          transform: translate(-150px);
+}
+
+.socials__github-link {
+  margin-right: 25px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: whitesmoke;
 }
 /*# sourceMappingURL=style.css.map */
